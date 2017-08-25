@@ -93,7 +93,7 @@ $(document).ready(function(){
  		if(newDefHp <= 0){
  			winCount++;
  			if (winCount === 3){
- 				\
+ 				console.log("You Win!");
  			}
  			$(".defender").empty();
  			$(".defender").append("<h2 class = bottomTitle>Defender</h2>")
