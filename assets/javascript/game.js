@@ -43,6 +43,7 @@ $(document).ready(function(){
 		 				var enemiesButton = $("#button"+i);
 		 				$("#button"+i).remove();
 		 				$(".enemies").append(enemiesButton);
+
 		 			}
 	 			}	
 	 		}
@@ -54,6 +55,8 @@ $(document).ready(function(){
 	 			$(this).remove();
 	 			$(".defender").append(defenderChosen);
 	 			$(document).off("click", ".character");
+	 			console.log($(this).attr("data-hp"));
+	 			$(".bottomTitle").text("Defender Health Points "+($(this).attr("data-hp")));
 	 		}
 	 		// console.log(characterArray);
 	 	});
@@ -75,7 +78,8 @@ $(document).ready(function(){
  			console.log(defenderChosen.attr("data-hp"));
  			console.log(characterChosen.attr("data-hp"));
 
- 			$(".topTitle").text("Character Health Points "+characterChosen.attr("data-hp"));
+ 			$(".topTitle").text("Character Health Points: "+characterChosen.attr("data-hp"));
+ 			$(".bottomTitle").text("Defender Health Points: "+defenderChosen.attr("data-hp"));
 
  			winLoss();
  		}
@@ -88,7 +92,7 @@ $(document).ready(function(){
  				console.log("You Win!");
  			}
  			$(".defender").empty();
- 			$(".defender").append("<h2>Defender</h2>")
+ 			$(".defender").append("<h2 class = bottomTitle>Defender</h2>")
  			chooseCharacter();
  			defenderChosen = undefined;
  		}
